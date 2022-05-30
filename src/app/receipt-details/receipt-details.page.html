@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>receiptDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img class="img-center" [src]="receiptDetails.imageURL" />
+    <ion-card-header>
+      <ion-card-title class="card-title">{{receiptDetails.name}}</ion-card-title>
+      <ion-card-subtitle class="card-subtitle">{{receiptDetails.address}}</ion-card-subtitle>
+      
+    </ion-card-header>
+    <ion-card-content class="card-subtitle">
+      {{receiptDetails.description}}
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+        <p>{{receiptDetails.date}}</p>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <p>{{receiptDetails.time}}</p>
+          </ion-item>
+      </ion-col>
+      <ion-col >
+        <ion-item>
+          <p>Amount :{{receiptDetails.amount}}</p>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+ 
+</ion-content>

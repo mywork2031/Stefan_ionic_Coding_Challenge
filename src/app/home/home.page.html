@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      List
+    </ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+<div style="display: inline-flex;">
+<div style="width: 85%">
+  <ion-searchbar animated placeholder="Search Expenses" [(ngModel)]="searchTerm"
+  (ionChange)="setFilteredItems()"></ion-searchbar>
+</div>
+<div class="center"><p style="margin-left: 5px;">{{receiptsCount}}</p></div>
+</div>
+<ion-content >
+  <ion-list>
+    <ion-item-sliding *ngFor="let receipt of receipts" [routerLink]="['/receipt-details', receipt.id]">
+      <ion-item>
+
+      <ion-avatar>
+        <ion-img [src]="receipt.imageURL"></ion-img>
+      </ion-avatar>
+
+        <ion-label>
+
+      <ion-text>
+        &nbsp; {{receipt.name}}
+      </ion-text>
+
+
+      <ion-text>
+        <p> &nbsp;{{receipt.date}} </p>
+      </ion-text>
+
+      </ion-label>
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
